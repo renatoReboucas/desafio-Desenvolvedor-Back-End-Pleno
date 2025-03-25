@@ -13,11 +13,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Student {
+model Users {
   id        String   @id @default(uuid())
-  ra        Int      @unique
   cpf       String
   nome      String
-  email     String
+  email     String   @unique
+  password  String
   createdAt DateTime @default(now())
 }

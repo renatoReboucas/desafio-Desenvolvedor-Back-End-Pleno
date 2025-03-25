@@ -3,27 +3,16 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 async function main() {
-  await prisma.student.createMany({
+  await prisma.users.createMany({
     data: [
       {
-        ra: 1001,
-        cpf: '12345678901',
-        nome: 'João Silva',
-        email: 'joao@example.com',
+        cpf: '98765432100',
+        nome: 'Admin User',
+        email: 'admin@example.com',
+        password: 'mudar123'
       },
-      {
-        ra: 1002,
-        cpf: '23456789012',
-        nome: 'Maria Santos',
-        email: 'maria@example.com',
-      },
-      {
-        ra: 1003,
-        cpf: '34567890123',
-        nome: 'Pedro Oliveira',
-        email: 'pedro@example.com',
-      },
-    ],
+
+    ]
   })
 
   console.log('Seed completed!')

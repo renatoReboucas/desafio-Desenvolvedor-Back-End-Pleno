@@ -6,7 +6,9 @@ import {
 } from 'fastify-type-provider-zod'
 import 'dotenv/config'
 import cors from '@fastify/cors'
-import { StudentRoutes } from '../Routes/Student'
+import fastifyJwt from '@fastify/jwt'
+import { UserRoutes } from '../Routes/Users'
+import { LoginRoutes } from '../Routes/Login'
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
 app.setValidatorCompiler(validatorCompiler)
@@ -16,11 +18,16 @@ app.register(cors, {
   origin: true,
 })
 
+app.register(fastifyJwt, {
+  secret: "teste",
+});
+
 app.get('/ping', async () => {
   return { ping: 'pong' }
 })
 
-app.register(StudentRoutes, { prefix: 'api/student' })
+app.register(UserRoutes, { prefix: 'api/user' })
+app.register(LoginRoutes, { prefix: 'api/auth' })
 
 app
   .listen({
