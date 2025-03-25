@@ -1,0 +1,35 @@
+### Variables
+
+@apiurl = http://localhost:3333
+@id = 1c7c60e0-6a44-41d2-88a2-aca05c5a54da
+### GET testing route
+
+GET {{apiurl}}/ping HTTP/1.1
+
+
+### get all students
+GET {{apiurl}}/api/student/students HTTP/1.1
+
+
+### create student
+POST {{apiurl}}/api/student/students HTTP/1.1
+Content-Type: application/json
+
+{   "ra": 1004,
+    "cpf": "99999999999",
+    "nome": "John Doe",
+    "email": "john@example.com"
+}
+
+### Editar um aluno existente
+PUT {{apiurl}}/api/student/students/{{id}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "nome": "John Doe Editado",
+    "email": "john.edited@example.com"
+}
+
+### Excluir um aluno
+DELETE {{apiurl}}/api/student/students/{{id}} HTTP/1.1
+

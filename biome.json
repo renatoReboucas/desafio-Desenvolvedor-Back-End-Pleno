@@ -1,0 +1,110 @@
+{
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"organizeImports": {
+		"enabled": true
+	},
+	"formatter": {
+		"indentStyle": "space",
+		"indentWidth": 2,
+		"lineWidth": 80
+	},
+	"javascript": {
+		"formatter": {
+			"arrowParentheses": "asNeeded",
+			"jsxQuoteStyle": "double",
+			"quoteStyle": "single",
+			"semicolons": "asNeeded",
+			"trailingCommas": "es5"
+		}
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"a11y": {
+				"useSemanticElements": "off",
+				"useValidAnchor": "off",
+				"useButtonType": "off",
+				"noRedundantRoles": "off",
+				"useFocusableInteractive": "off",
+				"useAltText": "off",
+				"noLabelWithoutControl": "off"
+			},
+			"security": {
+				"noDangerouslySetInnerHtml": "off"
+			},
+			"complexity": {
+				"noExcessiveCognitiveComplexity": "off",
+				"noBannedTypes": "off",
+				"noUselessStringConcat": "error",
+				"noUselessUndefinedInitialization": "error",
+				"useSimplifiedLogicExpression": "off",
+				"noVoid": "warn",
+				"noUselessTernary": "off",
+				"useArrowFunction": "off"
+			},
+			"correctness": {
+				"noUnusedImports": "error",
+				"useHookAtTopLevel": "off",
+				"noUnusedVariables": "off",
+				"noUnusedFunctionParameters": "off",
+				"useExhaustiveDependencies": "off",
+				"noChildrenProp": "off"
+			},
+			"nursery": {
+				"noDuplicateElseIf": "error"
+			},
+			"performance": {
+				"noBarrelFile": "error",
+				"useTopLevelRegex": "off"
+			},
+			"style": {
+				"noDefaultExport": "off",
+				"useBlockStatements": "off",
+				"useCollapsedElseIf": "error",
+				"noUselessElse": "off",
+				"useDefaultSwitchClause": "error",
+				"useSelfClosingElements": "off",
+				"noShoutyConstants": "warn",
+				"useNumberNamespace": "off",
+				"useNamingConvention": "off",
+				"noNonNullAssertion": "off",
+				"noUnusedTemplateLiteral": "off",
+				"useImportType": "off",
+				"useConsistentArrayType": {
+					"level": "off",
+					"options": {
+						"syntax": "generic"
+					}
+				}
+			},
+			"suspicious": {
+				"noConsoleLog": "info",
+				"noEmptyBlockStatements": "error",
+				"useAwait": "off",
+				"noExplicitAny": "off",
+				"noArrayIndexKey": "off",
+				"noDebugger": "off",
+				"noImplicitAnyLet": "off"
+			}
+		}
+	},
+	"files": {
+		"ignore": [
+			"node_modules",
+			"tsconfig.json",
+			"tsconfig.app.json",
+			"tsconfig.node.json",
+			"vite.config.ts",
+			"config/*",
+			".husky/*",
+			".vscode/*",
+			"tailwind.config.js",
+			"src/hooks/*",
+			"src/components/ui/*",
+			"dist/*",
+			"biome.json",
+			"package.json"
+		]
+	}
+}
